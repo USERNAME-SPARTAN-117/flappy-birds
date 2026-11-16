@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://dfct04cdnx6hx"]
+
+[ext_resource type="Script" uid="uid://blows5yh7x16h" path="res://Scenes/Obstacles/PipePair.gd" id="1_8pvfw"]
+[ext_resource type="PackedScene" uid="uid://dfl57mg57e734" path="res://Scenes/Obstacles/Pipe.tscn" id="2_pynrx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8pvfw"]
+size = Vector2(7, 100)
+
+[node name="PipePair" type="Node2D" unique_id=463528649]
+script = ExtResource("1_8pvfw")
+speed = 60.0
+despawn_x = -32.0
+
+[node name="TopPipe" parent="." unique_id=230976551 instance=ExtResource("2_pynrx")]
+position = Vector2(0, -50)
+scale = Vector2(1, -1)
+
+[node name="BottomPipe" parent="." unique_id=79915719 instance=ExtResource("2_pynrx")]
+position = Vector2(0, 50)
+
+[node name="ScoreZone" type="Area2D" parent="." unique_id=89672081]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ScoreZone" unique_id=1470621524]
+shape = SubResource("RectangleShape2D_8pvfw")

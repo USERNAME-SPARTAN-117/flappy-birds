@@ -1,0 +1,184 @@
+[gd_scene format=3 uid="uid://dnfr6wkvg6nvl"]
+
+[ext_resource type="Script" uid="uid://i2mmlfnf16sk" path="res://Scenes/UI/UI.gd" id="1_s86y4"]
+[ext_resource type="Texture2D" uid="uid://rx85omc748lh" path="res://Assets/flappybird.png" id="2_636u5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_akgwn"]
+atlas = ExtResource("2_636u5")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w8wei"]
+atlas = ExtResource("2_636u5")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b83rk"]
+atlas = ExtResource("2_636u5")
+region = Rect2(32, 96, 128, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cwhs5"]
+atlas = ExtResource("2_636u5")
+region = Rect2(192, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aw1lf"]
+atlas = ExtResource("2_636u5")
+region = Rect2(194, 130, 28, 28)
+
+[node name="UI" type="Control" unique_id=1989802090]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_s86y4")
+pause_texture = SubResource("AtlasTexture_akgwn")
+play_texture = SubResource("AtlasTexture_w8wei")
+
+[node name="ScoreLabel" type="Label" parent="." unique_id=1590257698]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PauseButton" type="TextureButton" parent="." unique_id=262613735]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -21.0
+offset_top = 4.0
+offset_right = 11.0
+offset_bottom = 36.0
+grow_horizontal = 0
+scale = Vector2(0.5, 0.5)
+
+[node name="MenuOverlay" type="Control" parent="." unique_id=1778094735]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="TitleSprite" type="TextureRect" parent="MenuOverlay" unique_id=246028546]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_b83rk")
+
+[node name="HintLabel" type="Label" parent="MenuOverlay" unique_id=1140790244]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 152.0
+offset_right = 125.0
+offset_bottom = 175.0
+theme_override_font_sizes/font_size = 8
+text = "Flap (W) to Start"
+horizontal_alignment = 1
+vertical_alignment = 1
+resize_font_to_fit = true
+maximum_font_size = 10
+
+[node name="GameOverPanel" type="PanelContainer" parent="." unique_id=310082693]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 4.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="GameOverPanel" unique_id=489866430]
+self_modulate = Color(1.8247963, 1.8247963, 1.8247963, 0.60784316)
+layout_mode = 2
+size_flags_horizontal = 17
+size_flags_vertical = 17
+texture = SubResource("AtlasTexture_cwhs5")
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="GameOverPanel" unique_id=1114948252]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GameOverPanel/MarginContainer" unique_id=11293863]
+layout_mode = 2
+alignment = 1
+
+[node name="GameOverLabel" type="Label" parent="GameOverPanel/MarginContainer/VBoxContainer" unique_id=729899403]
+layout_mode = 2
+text = "GAME OVER"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FinalScoreLabel" type="Label" parent="GameOverPanel/MarginContainer/VBoxContainer" unique_id=96722331]
+layout_mode = 2
+text = "SCORE: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HighScoreLabel" type="Label" parent="GameOverPanel/MarginContainer/VBoxContainer" unique_id=1028777110]
+layout_mode = 2
+text = "BEST: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RestartHintLabel" type="Label" parent="GameOverPanel/MarginContainer/VBoxContainer" unique_id=1939699446]
+layout_mode = 2
+text = "FLAP TO RETRY"
+horizontal_alignment = 1
+vertical_alignment = 1
+resize_font_to_fit = true
+maximum_font_size = 12
+
+[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=1418456937]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_aw1lf")
+patch_margin_left = 2
+patch_margin_top = 2
+patch_margin_right = 2
+patch_margin_bottom = 2
+
+[node name="FlashRect" type="ColorRect" parent="." unique_id=916556012]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 1, 1, 0)

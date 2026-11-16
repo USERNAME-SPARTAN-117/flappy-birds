@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://dfl57mg57e734"]
+
+[ext_resource type="Texture2D" uid="uid://rx85omc748lh" path="res://Assets/flappybird.png" id="1_3w2li"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cmk6n"]
+atlas = ExtResource("1_3w2li")
+region = Rect2(0, 112, 32, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_78n6p"]
+size = Vector2(28, 320)
+
+[node name="Pipe" type="StaticBody2D" unique_id=230976551]
+collision_layer = 2
+collision_mask = 0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=1433070524]
+offset_left = -16.0
+offset_right = 16.0
+offset_bottom = 320.0
+texture = SubResource("AtlasTexture_cmk6n")
+region_rect = Rect2(0, 0, 32, 48)
+patch_margin_top = 16
+axis_stretch_vertical = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1240986466]
+position = Vector2(0, 160)
+shape = SubResource("RectangleShape2D_78n6p")

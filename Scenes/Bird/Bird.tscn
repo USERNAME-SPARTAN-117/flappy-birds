@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://b4dncnsbo8wkm"]
+
+[ext_resource type="Script" uid="uid://iapio3mpfcm7" path="res://Scenes/Bird/Bird.gd" id="1_a4a6q"]
+[ext_resource type="Texture2D" uid="uid://rx85omc748lh" path="res://Assets/flappybird.png" id="1_hkp07"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a4a6q"]
+atlas = ExtResource("1_hkp07")
+region = Rect2(160, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wjm1d"]
+atlas = ExtResource("1_hkp07")
+region = Rect2(160, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_21qys"]
+atlas = ExtResource("1_hkp07")
+region = Rect2(160, 128, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r8f2w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a4a6q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wjm1d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_21qys")
+}],
+"loop": 2,
+"name": &"flap",
+"speed": 10.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wjm1d"]
+radius = 7.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_21qys"]
+radius = 7.0
+
+[node name="Bird" type="CharacterBody2D" unique_id=1052976990]
+script = ExtResource("1_a4a6q")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=458363406]
+sprite_frames = SubResource("SpriteFrames_r8f2w")
+animation = &"flap"
+frame_progress = 0.6514236
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1183071559]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_wjm1d")
+
+[node name="Hurtbox" type="Area2D" parent="." unique_id=1057754648]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=1913072294]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_21qys")

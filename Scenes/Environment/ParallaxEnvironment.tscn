@@ -1,0 +1,189 @@
+[gd_scene format=3 uid="uid://bv6tq116e74c4"]
+
+[ext_resource type="Texture2D" uid="uid://rx85omc748lh" path="res://Assets/flappybird.png" id="1_febtj"]
+[ext_resource type="Script" uid="uid://df2phlywwlffs" path="res://Scenes/Environment/ParallaxEnvironment.gd" id="1_yb2v3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_febtj"]
+atlas = ExtResource("1_febtj")
+region = Rect2(0, 0, 128, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yb2v3"]
+atlas = ExtResource("1_febtj")
+region = Rect2(128, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7hhtf"]
+atlas = ExtResource("1_febtj")
+region = Rect2(128, 32, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vv2b0"]
+atlas = ExtResource("1_febtj")
+region = Rect2(0, 32, 128, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v2ax1"]
+atlas = ExtResource("1_febtj")
+region = Rect2(0, 64, 128, 32)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_febtj"]
+texture = ExtResource("1_febtj")
+texture_region_size = Vector2i(32, 16)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+0:8/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+6:8/0 = 0
+7:8/0 = 0
+0:9/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+3:9/0 = 0
+4:9/0 = 0
+5:9/0 = 0
+6:9/0 = 0
+7:9/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_febtj"]
+tile_size = Vector2i(32, 16)
+sources/3 = SubResource("TileSetAtlasSource_febtj")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7hhtf"]
+size = Vector2(256, 16)
+
+[node name="ParallaxEnvironment" type="Parallax2D" unique_id=73716871]
+script = ExtResource("1_yb2v3")
+
+[node name="SkyBackground" type="ColorRect" parent="." unique_id=31028396]
+offset_left = -128.0
+offset_right = 384.0
+offset_bottom = 256.0
+size_flags_horizontal = 19
+size_flags_vertical = 19
+color = Color(0, 0.6423203, 0.6431784, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="CloudLayer" type="Parallax2D" parent="." unique_id=182181218]
+scroll_scale = Vector2(0.1, 0.1)
+repeat_size = Vector2(128, 0)
+autoscroll = Vector2(-2, 0)
+repeat_times = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="CloudLayer" unique_id=1375345124]
+position = Vector2(64, 212)
+texture = SubResource("AtlasTexture_febtj")
+
+[node name="CityFarLayer" type="Parallax2D" parent="." unique_id=753654018]
+scroll_scale = Vector2(0.25, 0.25)
+repeat_size = Vector2(64, 0)
+autoscroll = Vector2(-5, 0)
+repeat_times = 7
+
+[node name="Sprite2D" type="Sprite2D" parent="CityFarLayer" unique_id=728576195]
+position = Vector2(96, 216)
+texture = SubResource("AtlasTexture_yb2v3")
+
+[node name="CityNearLayer" type="Parallax2D" parent="." unique_id=1638770543]
+scroll_scale = Vector2(0.5, 0.5)
+repeat_size = Vector2(64, 0)
+autoscroll = Vector2(-10, 0)
+repeat_times = 7
+
+[node name="Sprite2D" type="Sprite2D" parent="CityNearLayer" unique_id=2059160330]
+position = Vector2(92, 218)
+texture = SubResource("AtlasTexture_7hhtf")
+
+[node name="BushFarLayer" type="Parallax2D" parent="." unique_id=1949894618]
+scroll_scale = Vector2(0.625, 0.625)
+repeat_size = Vector2(128, 0)
+autoscroll = Vector2(-15, 0)
+repeat_times = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="BushFarLayer" unique_id=976446436]
+position = Vector2(64, 224)
+texture = SubResource("AtlasTexture_vv2b0")
+
+[node name="BushNearLayer" type="Parallax2D" parent="." unique_id=151885001]
+scroll_scale = Vector2(0.75, 0.75)
+repeat_size = Vector2(128, 0)
+autoscroll = Vector2(-20, 0)
+repeat_times = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="BushNearLayer" unique_id=40913144]
+position = Vector2(64, 224)
+texture = SubResource("AtlasTexture_v2ax1")
+
+[node name="Ground" type="Parallax2D" parent="." unique_id=1894208398]
+repeat_size = Vector2(32, 0)
+autoscroll = Vector2(-40, 0)
+repeat_times = 15
+
+[node name="TileMapLayer" type="TileMapLayer" parent="Ground" unique_id=1109679499]
+position = Vector2(32, 240)
+tile_map_data = PackedByteArray(0, 0, 2, 0, 0, 0, 3, 0, 4, 0, 5, 0, 0, 0)
+tile_set = SubResource("TileSet_febtj")
+
+[node name="GroundHazard" type="Area2D" parent="." unique_id=331286713]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GroundHazard" unique_id=1587271576]
+position = Vector2(128, 248)
+shape = SubResource("RectangleShape2D_7hhtf")

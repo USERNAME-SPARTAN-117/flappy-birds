@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://kougscyn20h8"]
+
+[ext_resource type="Script" uid="uid://djvb4jp0v81dq" path="res://Autoloads/AudioManager.gd" id="1_vftlb"]
+[ext_resource type="AudioStream" uid="uid://c1rr2dsbqmieh" path="res://Audio/symphony - summers.mp3" id="2_cwhs5"]
+[ext_resource type="AudioStream" uid="uid://bow4f36pgyfos" path="res://Audio/flap.wav" id="3_k5bu1"]
+[ext_resource type="AudioStream" uid="uid://disxo2di6ht50" path="res://Audio/point.wav" id="4_imruj"]
+[ext_resource type="AudioStream" uid="uid://p14eq5sxekuj" path="res://Audio/lose.wav" id="5_a84nq"]
+
+[node name="AudioManager" type="Node" unique_id=1336111255]
+script = ExtResource("1_vftlb")
+bgm_stream = ExtResource("2_cwhs5")
+flap_sfx = ExtResource("3_k5bu1")
+score_sfx = ExtResource("4_imruj")
+hit_sfx = ExtResource("5_a84nq")

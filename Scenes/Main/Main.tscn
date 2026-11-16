@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://ive8cmi7cioy"]
+
+[ext_resource type="Script" uid="uid://b1jlxl2sta4y4" path="res://Scenes/Main/Main.gd" id="1_cmk6n"]
+[ext_resource type="Script" uid="uid://btr3064cdfmqi" path="res://Scenes/Main/PipeSpawner.gd" id="1_p8rbg"]
+[ext_resource type="PackedScene" uid="uid://dfct04cdnx6hx" path="res://Scenes/Obstacles/PipePair.tscn" id="2_qtv3y"]
+[ext_resource type="PackedScene" uid="uid://b4dncnsbo8wkm" path="res://Scenes/Bird/Bird.tscn" id="4_o8wgc"]
+[ext_resource type="PackedScene" uid="uid://bv6tq116e74c4" path="res://Scenes/Environment/ParallaxEnvironment.tscn" id="5_w20t6"]
+[ext_resource type="PackedScene" uid="uid://dnfr6wkvg6nvl" path="res://Scenes/UI/UI.tscn" id="6_w20t6"]
+
+[node name="Main" type="Node2D" unique_id=909760931]
+script = ExtResource("1_cmk6n")
+
+[node name="ParallaxEnvironment" parent="." unique_id=73716871 instance=ExtResource("5_w20t6")]
+
+[node name="PipeSpawner" type="Node2D" parent="." unique_id=777956145]
+z_index = 1
+script = ExtResource("1_p8rbg")
+pipe_scene = ExtResource("2_qtv3y")
+spawn_x = 170.0
+min_gap_y = 75.0
+max_gap_y = 175.0
+
+[node name="SpawnTimer" type="Timer" parent="PipeSpawner" unique_id=391657519]
+
+[node name="Bird" parent="." unique_id=1052976990 instance=ExtResource("4_o8wgc")]
+position = Vector2(48, 128)
+
+[node name="UICanvas" type="CanvasLayer" parent="." unique_id=896944435]
+
+[node name="UI" parent="UICanvas" unique_id=1989802090 instance=ExtResource("6_w20t6")]
