@@ -39,16 +39,18 @@ func _on_state_changed(new_state: GameManager.GameState) -> void:
 		new_state == GameManager.GameState.PAUSED
 	)
 	
-	# Swap the button icon between pause and play
-	if new_state == GameManager.GameState.PAUSED and play_texture:
-		pause_button.texture_normal = play_texture
-	elif pause_texture:
-		pause_button.texture_normal = pause_texture
-		
 	if new_state == GameManager.GameState.GAME_OVER:
 		trigger_flash()
 		final_score_label.text = "SCORE: %d" % GameManager.score
 		high_score_label.text = "BEST: %d" % GameManager.high_score
+		
+		# Fade in the whole GameOverPanel (NinePatchRect + labels together)
+		game_over_panel.modulate.a = 0.0
+		game_over_panel.visible = true
+		var tween := create_tween()
+		tween.tween_property(game_over_panel, "modulate:a", 1.0, 1.0).set_trans(Tween.TRANS_SINE)
+	else:
+		game_over_panel.visible = false
 
 
 func _on_pause_button_pressed() -> void:

@@ -30,6 +30,8 @@ func _ready() -> void:
 	
 	if bgm_stream:
 		_bgm_player.stream = bgm_stream
+		# Wait one idle frame so the OS audio driver is fully ready
+		await get_tree().process_frame
 		_bgm_player.play()
 
 func play_sfx(stream: AudioStream, pitch_variance: float = 0.0) -> void:

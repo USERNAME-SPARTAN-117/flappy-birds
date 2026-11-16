@@ -111,6 +111,7 @@ offset_right = 4.0
 offset_bottom = 4.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="NinePatchRect" type="NinePatchRect" parent="GameOverPanel" unique_id=489866430]
 self_modulate = Color(1.8247963, 1.8247963, 1.8247963, 0.60784316)
@@ -125,6 +126,7 @@ patch_margin_bottom = 4
 
 [node name="MarginContainer" type="MarginContainer" parent="GameOverPanel" unique_id=1114948252]
 layout_mode = 2
+mouse_filter = 2
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
@@ -132,6 +134,7 @@ theme_override_constants/margin_bottom = 8
 
 [node name="VBoxContainer" type="VBoxContainer" parent="GameOverPanel/MarginContainer" unique_id=11293863]
 layout_mode = 2
+mouse_filter = 2
 alignment = 1
 
 [node name="GameOverLabel" type="Label" parent="GameOverPanel/MarginContainer/VBoxContainer" unique_id=729899403]

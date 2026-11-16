@@ -7,7 +7,7 @@ atlas = ExtResource("1_3w2li")
 region = Rect2(0, 112, 32, 48)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_78n6p"]
-size = Vector2(28, 320)
+size = Vector2(26, 317)
 
 [node name="Pipe" type="StaticBody2D" unique_id=230976551]
 collision_layer = 2
@@ -23,5 +23,5 @@ patch_margin_top = 16
 axis_stretch_vertical = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1240986466]
-position = Vector2(0, 160)
+position = Vector2(0, 161.5)
 shape = SubResource("RectangleShape2D_78n6p")
