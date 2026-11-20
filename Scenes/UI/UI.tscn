@@ -49,18 +49,6 @@ text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="PauseButton" type="TextureButton" parent="." unique_id=262613735]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -21.0
-offset_top = 4.0
-offset_right = 11.0
-offset_bottom = 36.0
-grow_horizontal = 0
-scale = Vector2(0.5, 0.5)
-
 [node name="MenuOverlay" type="Control" parent="." unique_id=1778094735]
 layout_mode = 1
 anchors_preset = 15
@@ -185,3 +173,15 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 color = Color(1, 1, 1, 0)
+
+[node name="PauseButton" type="TextureButton" parent="." unique_id=262613735]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -21.0
+offset_top = 4.0
+offset_right = 11.0
+offset_bottom = 36.0
+grow_horizontal = 0
+scale = Vector2(0.5, 0.5)

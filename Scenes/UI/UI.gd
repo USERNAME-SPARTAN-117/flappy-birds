@@ -38,7 +38,13 @@ func _on_state_changed(new_state: GameManager.GameState) -> void:
 		new_state == GameManager.GameState.PLAYING or
 		new_state == GameManager.GameState.PAUSED
 	)
-	
+
+	# Swap the button icon between pause and play
+	if new_state == GameManager.GameState.PAUSED and play_texture:
+		pause_button.texture_normal = play_texture
+	elif pause_texture:
+		pause_button.texture_normal = pause_texture
+
 	if new_state == GameManager.GameState.GAME_OVER:
 		trigger_flash()
 		final_score_label.text = "SCORE: %d" % GameManager.score
